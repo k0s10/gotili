@@ -19,7 +19,7 @@ a:hover {
 	text-decoration: none;
 }
 
-.gjfy-container {
+.gotili-container {
 	width: auto;
 	max-width: 700px;
 	padding: 0 15px;
@@ -28,12 +28,12 @@ a:hover {
 	text-align: center;
 }
 
-.gjfy-logo {
+.gotili-logo {
 	max-width: 200px;
 	padding: 80px 0px 20px 0px;
 }
 
-.gjfy-footer-logo-small {
+.gotili-footer-logo-small {
 	max-height: 24px;
 	vertical-align: middle;
 }
@@ -57,7 +57,7 @@ div#main ul {
 	line-height: 1.4;
 }
 
-.gjfy-form-control {
+.gotili-form-control {
 	font-family: inherit;
 	display: block;
 	width: 100%;

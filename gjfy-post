@@ -1,6 +1,6 @@
 #!/bin/bash
 
-POSTURL="${GJFY_POSTURL:-http://localhost:9154/api/v1/new}"
+POSTURL="${gotili_POSTURL:-http://localhost:9154/api/v1/new}"
 
 which jq >/dev/null 2>&1 || {
     echo "jq utility not found" >&2

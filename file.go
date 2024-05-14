@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io/ioutil"
 	"log"
 	"os"
 	"path"
@@ -22,7 +21,7 @@ func fileOrConst(fn string, def string) string {
 // returns an empty byte slice.
 func tryReadFile(fn string) []byte {
 	pn := tryFile(fn)
-	contents, err := ioutil.ReadFile(pn)
+	contents, err := os.ReadFile(pn)
 	if err == nil {
 		return contents
 	}

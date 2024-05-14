@@ -6,13 +6,13 @@ const (
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<title>gjfy{{block "title" .}}{{end}}</title>
+		<title>gotili{{block "title" .}}{{end}}</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<link rel="stylesheet" type="text/css" href="custom.css">
 	</head>
 	<body>
-	<div class="gjfy-container">
-    <img src="logo.png" alt="logo" class="gjfy-logo">
+	<div class="gotili-container">
+    <img src="logo.png" alt="logo" class="gotili-logo">
 	<div id="content">
 	{{block "content" .}}{{end}}
 	</div>
@@ -27,7 +27,7 @@ const (
 	{{define "title"}} - one time links{{end}}
 	{{define "content"}}
 	<div id="main">
-	<h1>gjfy - one time links</h1>
+	<h1>gotili - one time links</h1>
 	<p class="lead">
 		Create links that automatically disappear once clicked. On first click
 		it will show a "secret", for instance a password that somebody wants to
@@ -37,9 +37,9 @@ const (
 	<ul>
 		{{if .AllowAnonymous}}<p>Create a secret below:</p>
 		<div id="create-secret-container"><form method="POST" action="/create" autocomplete="off"><input name="secret" class="create-secret-form-control" placeholder="Enter secret to share" autofocus required/><button class="create-secret-form-control">Submit</button></form></div>{{end}}
-		<li><a href="https://github.com/sstark/gjfy">
-			<img src="gjfy-logo-small.png" alt="gjfy-logo" class="gjfy-footer-logo-small"> Homepage</a>
-		<li><a href="gjfy-post">Download command line client</a>
+		<li><a href="https://github.com/sstark/gotili">
+			<img src="gotili-logo-small.png" alt="gotili-logo" class="gotili-footer-logo-small"> Homepage</a>
+		<li><a href="gotili-post">Download command line client</a>
 	</ul>
 	</p>
 	</div>
@@ -60,12 +60,12 @@ const (
 	{{.UserMessageView}}
 	</p>
 	<p>The secret contained in this link is as follows:</p>
-	<input readonly autofocus type="text" class="gjfy-form-control" value="{{.Secret}}">
+	<input readonly autofocus type="text" class="gotili-form-control" value="{{.Secret}}">
 	</div>
 	{{end}}
 	{{block "footer" .}}
 		<div id="footer">
-		<p>This <a href="https://github.com/sstark/gjfy"><img src="gjfy-logo-small.png" alt="gjfy-logo" class="gjfy-footer-logo-small"></a> secret was created by
+		<p>This <a href="https://github.com/sstark/gotili"><img src="gotili-logo-small.png" alt="gotili-logo" class="gotili-footer-logo-small"></a> secret was created by
 			<a href="mailto:{{.AuthToken}}">{{.AuthToken}} </a>
 		</p>
 		</div>
@@ -105,7 +105,7 @@ const (
 	{{end}}
 	{{define "footer"}}
 		<div id="footer">
-		<p><a href="https://github.com/sstark/gjfy"><img src="gjfy-logo-small.png" alt="gjfy-logo" class="gjfy-footer-logo-small"></a>
+		<p><a href="https://github.com/sstark/gotili"><img src="gotili-logo-small.png" alt="gotili-logo" class="gotili-footer-logo-small"></a>
 		</p>
 		</div>
 	{{end}}
@@ -138,7 +138,7 @@ var (
 		0xff, 0x9f, 0x0, 0x0, 0xfd, 0xdf, 0x0, 0x0, 0xfc, 0x9f, 0x0, 0x0, 0xfe,
 		0x3f, 0x0, 0x0, 0xff, 0xff, 0x0, 0x0, 0xff, 0xff, 0x0, 0x0, 0xff, 0xff,
 		0x0, 0x0}
-	gjfyLogoSmall = []byte{0x89, 0x50, 0x4e, 0x47, 0xd, 0xa, 0x1a,
+	gotiliLogoSmall = []byte{0x89, 0x50, 0x4e, 0x47, 0xd, 0xa, 0x1a,
 		0xa, 0x0, 0x0, 0x0, 0xd, 0x49, 0x48, 0x44, 0x52, 0x0, 0x0, 0x0, 0x3f,
 		0x0, 0x0, 0x0, 0x2a, 0x8, 0x6, 0x0, 0x0, 0x0, 0x4, 0x44, 0x83, 0xf7,
 		0x0, 0x0, 0x0, 0x4, 0x73, 0x42, 0x49, 0x54, 0x8, 0x8, 0x8, 0x8, 0x7c,

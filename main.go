@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"html/template"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -18,7 +17,7 @@ import (
 )
 
 const (
-	myName                = "gjfy"
+	myName                = "gotili"
 	defaultHostname       = "localhost"
 	listenDefault         = ":9154"
 	uApiGet               = "/api/v1/get/"
@@ -26,9 +25,9 @@ const (
 	uApiCreate            = "/create"
 	uGet                  = "/g"
 	uInfo                 = "/i"
-	uClientShell          = "/gjfy-post"
+	uClientShell          = "/gotili-post"
 	uFav                  = "/favicon.ico"
-	uLogoSmall            = "/gjfy-logo-small.png"
+	uLogoSmall            = "/gotili-logo-small.png"
 	uCss                  = "/custom.css"
 	uLogo                 = "/logo.png"
 	maxData               = 1048576 // 1MB
@@ -113,7 +112,7 @@ func main() {
 	flag.BoolVar(&fAllowAnonymous, "allow-anonymous", allowAnonymousDefault, "allow secrets by anonymous users")
 	flag.Parse()
 
-	log.Printf("gjfy version %s\n", version)
+	log.Printf("gotili version %s\n", version)
 
 	store := make(secretStore)
 	store.NewEntry("secret", 100, 0, "test@example.org", "test")
@@ -183,7 +182,7 @@ func main() {
 
 	http.HandleFunc(uApiNew, func(w http.ResponseWriter, r *http.Request) {
 		var entry StoreEntry
-		body, err := ioutil.ReadAll(io.LimitReader(r.Body, maxData))
+		body, err := io.ReadAll(io.LimitReader(r.Body, maxData))
 		if err != nil {
 			panic(err)
 		}
@@ -248,7 +247,7 @@ func main() {
 	http.HandleFunc(uLogoSmall, func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "image/png")
 		w.WriteHeader(http.StatusOK)
-		w.Write(gjfyLogoSmall)
+		w.Write(gotiliLogoSmall)
 	})
 
 	http.HandleFunc(uCss, func(w http.ResponseWriter, r *http.Request) {

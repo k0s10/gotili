@@ -12,7 +12,7 @@ type ClientVars struct {
 const (
 	shellClient = `#!/bin/bash
 
-POSTURL="${GJFY_POSTURL:-{{.DefaultPostURL}}}"
+POSTURL="${gotili_POSTURL:-{{.DefaultPostURL}}}"
 
 which jq >/dev/null 2>&1 || {
     echo "jq utility not found" >&2

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"log"
 	"testing"
 )
@@ -30,7 +30,7 @@ var tdbTestPairs = []tdbTestPair{
 }
 
 func TestAuth_makeTokenDB(t *testing.T) {
-	log.SetOutput(ioutil.Discard)
+	log.SetOutput(io.Discard)
 	for _, pair := range tdbTestPairs {
 		tdb := makeTokenDB(pair.in)
 		if (tdb != nil) != pair.out {

@@ -8,7 +8,7 @@ import (
 
 func NotifyMail(to, msg string) {
 	if fNotify {
-		go SendMail(to, "GJFY notice", msg)
+		go SendMail(to, "gotili notice", msg)
 	}
 }
 
